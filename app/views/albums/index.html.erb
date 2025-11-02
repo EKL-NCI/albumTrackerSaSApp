@@ -1,16 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Albums" %>
 
 <h1>Albums</h1>
 
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+
 <div id="albums">
   <% @albums.each do |album| %>
-    <%= render album %>
-    <p>
-      <%= link_to "Show this album", album %>
-    </p>
+    <div id="<%= dom_id(album) %>" class="album-card">
+      
+      <%= render album %>
+
+      <div class="album-actions">
+        <%= link_to "Show", album %> |
+        <%= link_to "Edit", edit_album_path(album) %> |
+        <%= link_to "Delete", album, method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New album", new_album_path %>
+<%= link_to "New Album", new_album_path, class: "new-album-link" %>
+
