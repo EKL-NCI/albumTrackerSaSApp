@@ -42,10 +42,8 @@
 .kamal/hooks/*.sample
 
 # Nonessential or environment-specific bin scripts
-bin/brakeman
 bin/dev
 bin/docker-entrypoint
 bin/jobs
 bin/kamal
-bin/rubocop
 bin/thrust

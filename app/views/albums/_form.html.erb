@@ -1,8 +1,7 @@
 <%= form_with(model: album, local: true) do |form| %>
   <% if album.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
-
       <ul>
         <% album.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,37 +10,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
+  <div class="field">
+    <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
-    <%= form.label :artist, style: "display: block" %>
+  <div class="field">
+    <%= form.label :artist %>
     <%= form.text_field :artist %>
   </div>
 
-  <div>
-    <%= form.label :release_year, style: "display: block" %>
+  <div class="field">
+    <%= form.label :release_year %>
     <%= form.number_field :release_year %>
   </div>
 
-  <div>
-    <%= form.label :genre, style: "display: block" %>
+  <div class="field">
+    <%= form.label :genre %>
     <%= form.text_field :genre %>
   </div>
 
-  <div>
-    <%= form.label :rating, style: "display: block" %>
+  <div class="field">
+    <%= form.label :rating %>
     <%= form.number_field :rating %>
   </div>
 
-  <div>
-    <%= form.label :availability, style: "display: block" %>
+  <div class="field">
+    <%= form.label :availability %>
     <%= form.check_box :availability %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
