@@ -32,3 +32,20 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Editor and IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Kamal sample hooks
+.kamal/hooks/*.sample
+
+# Nonessential or environment-specific bin scripts
+bin/brakeman
+bin/dev
+bin/docker-entrypoint
+bin/jobs
+bin/kamal
+bin/rubocop
+bin/thrust
