@@ -1,1 +1,3 @@
-echo "Running JS scan..."
+#!/bin/bash
+set -e
+bundle exec rails test
