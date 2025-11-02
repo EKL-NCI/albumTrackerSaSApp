@@ -1,0 +1,16 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# IDE and Editor Settings
+.idea/
+.vscode/
+*.iml
+
+# Rails and System files
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
