@@ -1,12 +1,12 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: %i[ show edit update destroy ]
 
-  # GET /albums or /albums.json
+  # GET /albums
   def index
     @albums = Album.all
   end
 
-  # GET /albums/1 or /albums/1.json
+  # GET /albums/1
   def show
   end
 
@@ -19,7 +19,7 @@ class AlbumsController < ApplicationController
   def edit
   end
 
-  # POST /albums or /albums.json
+  # POST /albums
   def create
     @album = Album.new(album_params)
 
@@ -34,7 +34,7 @@ class AlbumsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /albums/1 or /albums/1.json
+  # PATCH/PUT /albums/1
   def update
     respond_to do |format|
       if @album.update(album_params)
@@ -47,10 +47,9 @@ class AlbumsController < ApplicationController
     end
   end
 
-  # DELETE /albums/1 or /albums/1.json
+  # DELETE /albums/1
   def destroy
-    @album.destroy!
-
+    @album.destroy
     respond_to do |format|
       format.html { redirect_to albums_path, notice: "Album was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
@@ -58,13 +57,14 @@ class AlbumsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_album
-      @album = Album.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def album_params
-      params.require(:album).permit(:title, :artist, :release_year, :genre, :rating, :availability)
-    end
+  # Callback to set album
+  def set_album
+    @album = Album.find(params[:id])
+  end
+
+  # Only allow trusted parameters
+  def album_params
+    params.require(:album).permit(:title, :artist, :release_year, :genre, :rating, :availability)
+  end
 end
