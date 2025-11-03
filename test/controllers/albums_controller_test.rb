@@ -1,7 +1,7 @@
 require "test_helper"
 
 class AlbumsControllerTest < ActionDispatch::IntegrationTest
-  fixtures :albums   # ✅ loads albums.yml
+  fixtures :albums
 
   setup do
     @album = albums(:one)
@@ -25,7 +25,7 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
         release_year: 2025,
         genre: "Rock",
         rating: 5,
-        availability: true   # Must include this!
+        availability: true
       } }
     end
     assert_redirected_to album_url(Album.last)
@@ -48,7 +48,7 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
       release_year: 2025,
       genre: "Pop",
       rating: 4,
-      availability: true   # Must include this!
+      availability: true
     } }
     assert_redirected_to album_url(@album)
   end
