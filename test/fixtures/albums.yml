@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: "Album One"
-  artist: "Artist One"
+  title: "Test Album"
+  artist: "Test Artist"
   release_year: 2025
   genre: "Rock"
-  rating: 5
+  rating: 3
   availability: true
 
 two:
-  title: "Album Two"
-  artist: "Artist Two"
-  release_year: 2024
+  title: "Test Album Two"
+  artist: "test Artist Two"
+  release_year: 2014
   genre: "Pop"
-  rating: 4
-  availability: true
+  rating: 2
+  availability: false

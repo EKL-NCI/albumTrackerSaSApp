@@ -17,7 +17,6 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-=begin
   test "should create album" do
     assert_difference("Album.count") do
       post albums_url, params: { album: {
@@ -31,7 +30,6 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to album_url(Album.last)
   end
-=end
 
   test "should show album" do
     get album_url(@album)
@@ -43,7 +41,6 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-=begin
   test "should update album" do
     patch album_url(@album), params: { album: {
       title: "Updated Album",
@@ -55,7 +52,6 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
     } }
     assert_redirected_to album_url(@album)
   end
-=end
 
   test "should destroy album" do
     assert_difference("Album.count", -1) do
